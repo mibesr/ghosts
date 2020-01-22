@@ -7,14 +7,14 @@ import (
 	"path"
 )
 
-const ConfigDir = ".config/ghosts"
+const CONFIG_HOME = ".config/ghosts"
 
-func GetConfigDir() string {
+func ConfigDir() string {
 	usr, err := user.Current()
 	if err != nil {
 		log.Fatal("Cannot get current user: ", err)
 	}
-	confDir := path.Join(usr.HomeDir, ConfigDir)
+	confDir := path.Join(usr.HomeDir, CONFIG_HOME)
 	if _, err := os.Stat(confDir); os.IsNotExist(err) {
 		err = os.MkdirAll(confDir, 0700)
 		if err != nil {
