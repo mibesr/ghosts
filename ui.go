@@ -23,6 +23,6 @@ func loop() {
 }
 
 func Draw() {
-	wnd := g.NewMasterWindow("Hello world", 400, 200, false, nil)
+	wnd := g.NewMasterWindow("Hello world", 400, 200, true, nil)
 	wnd.Main(loop)
 }
